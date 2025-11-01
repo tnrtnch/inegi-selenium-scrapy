@@ -2,7 +2,7 @@ name: Run INEGI Scraper
 
 on:
   schedule:
-    - cron: "0 * * * *"    # Hourly run 
+    - cron: "0 * * * *"    # Hourly autorun
   workflow_dispatch:       # For manuel run
 
 jobs:
@@ -13,7 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -22,22 +21,26 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install scrapy selenium pyyaml
+          pip install -r requirements.txt
 
-
-      - name: Run scraper
+      - name: Run scraper (headless)
         run: |
-          python main.py 
-
+          python main.py
 
       - name: List output
-        run: ls -l sanctions.json || echo "sanctions.json not found!"
+        run: |
+          ls -l sanctions.json || echo "sanctions.json not found!"
 
 
       - name: Commit & Push sanctions.json (always)
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # En güncel dosyayı ekle
           git add sanctions.json
-          git commit -m "Auto update sanctions.json [$(date)]" || echo "No changes to commit, but will push anyway."
+
+          # Eğer değişiklik varsa commit et, yoksa sadece push yap
+          git diff --cached --quiet || git commit -m "Auto update sanctions.json [$(date -u +'%Y-%m-%d %H:%M UTC')]"
+          
           git push origin main
