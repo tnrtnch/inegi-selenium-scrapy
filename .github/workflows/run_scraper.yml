@@ -2,7 +2,7 @@ name: Run INEGI Scraper
 
 on:
   schedule:
-    - cron: "0 */4 * * *"  # Every 4 hours 
+    - cron: "0 * * * *"    # Hourly run 
   workflow_dispatch:       # For manuel run
 
 jobs:
