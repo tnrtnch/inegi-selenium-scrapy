@@ -18,7 +18,7 @@ class InegiPipeline:
     def close_spider(self, spider):
         project_root = Path(__file__).resolve().parents[1]
         output_path = project_root / "sanctions.json"
-
+ 
         result = {
             "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "records": self.data,
