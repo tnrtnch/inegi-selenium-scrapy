@@ -1,0 +1,43 @@
+name: Run INEGI Scraper
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"  # Every 4 hours 
+  workflow_dispatch:       # For manuel run
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install scrapy selenium pyyaml
+
+
+      - name: Run scraper
+        run: |
+          python main.py 
+
+
+      - name: List output
+        run: ls -l sanctions.json || echo "sanctions.json not found!"
+
+
+      - name: Commit & Push sanctions.json (always)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add sanctions.json
+          git commit -m "Auto update sanctions.json [$(date)]" || echo "No changes to commit, but will push anyway."
+          git push origin main
