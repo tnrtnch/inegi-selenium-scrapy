@@ -25,6 +25,7 @@
 import os
 from pathlib import Path
 import json
+from datetime import datetime
 
 class InegiPipeline:
     def open_spider(self, spider):
@@ -36,12 +37,15 @@ class InegiPipeline:
         return item
 
     def close_spider(self, spider):
-        # Proje kök dizinini bul
         project_root = Path(__file__).resolve().parents[1]
-        output_file = "sanctions.json"
-        output_path = project_root / output_file
+        output_path = project_root / "sanctions.json"
+
+        result = {
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "records": self.data,
+        }
 
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(self.data, f, indent=2, ensure_ascii=False)
+            json.dump(result, f, indent=2, ensure_ascii=False)
 
         spider.logger.info(f"✅ {len(self.data)} profile(s) saved: {output_path}")
