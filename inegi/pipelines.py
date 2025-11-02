@@ -1,6 +1,4 @@
-from itemadapter import ItemAdapter
 from datetime import datetime
-from pathlib import Path
 
 import json
 import os
@@ -15,42 +13,14 @@ class InegiPipeline:
         self.data.append(dict(item))
         return item
 
-    # def close_spider(self, spider):
-    #     project_root = Path(__file__).resolve().parents[1]
-    #     output_path = project_root / "sanctions.json"
- 
-    #     result = {
-    #         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-    #         "":self.data,
-    #     }
-
-    #     with open(output_path, "w", encoding="utf-8") as f:
-    #         json.dump(result, f, indent=2, ensure_ascii=False)
-
-    #     spider.logger.info(f"{len(self.data)} profile(s) saved: {output_path}")
-
-    # def close_spider(self, spider):
-    #     output_file = spider.config.get("output_file", "sanctions.json")
-    #     output_path = os.path.abspath(output_file)
-
-    #     output_data = [{"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")} + "UTC"] + self.data
-
-    #     with open(output_path, "w", encoding="utf-8") as f:
-    #         json.dump(output_data, f, indent=2, ensure_ascii=False)
-
-    #     spider.logger.info(f"{len(self.data)} profile(s) saved: {output_path}")
-
     def close_spider(self, spider):
             output_file = spider.config.get("output_file", "sanctions.json")
             output_path = os.path.abspath(output_file)
 
-            # UTC zaman damgası
             utc_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-
-            # JSON verisi (liste + tarih başta)
             output_data = [{"last_updated": utc_time}] + self.data
 
             with open(output_path, "w", encoding="utf-8") as f:
                 json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-            spider.logger.info(f"✅ {len(self.data)} profile(s) saved: {output_path}")
+            spider.logger.info(f"{len(self.data)} profile(s) saved: {output_path}")
