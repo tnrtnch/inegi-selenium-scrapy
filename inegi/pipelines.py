@@ -33,8 +33,7 @@ class InegiPipeline:
         output_file = spider.config.get("output_file", "sanctions.json")
         output_path = os.path.abspath(output_file)
 
-        # JSON dizisine "last_updated" bilgisi ilk eleman olarak eklenecek
-        output_data = [{"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}] + self.data
+        output_data = [{"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")} + "UTC"] + self.data
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
