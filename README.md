@@ -19,6 +19,7 @@ inegi/<br />
 └── .github/<br />
 │    └── workflows/<br />
 │       └── run_scraper.yml # GitHub Actions automation<br />
+│<br />
 ├── inegi/<br />
 │ ├── spiders/<br />
 │ │ └── inegi_spider.py # Main Scrapy spider (with Selenium logic)<br />
