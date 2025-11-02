@@ -40,7 +40,6 @@ class InegiSpider(scrapy.Spider):
         self.driver.get(response.url)
         self.driver.maximize_window()
 
-        # Arama işlemleri
         self.wait.until(EC.element_to_be_clickable((By.ID, "cphContenido_rbtNombre"))).click()
         self.wait.until(EC.visibility_of_element_located((By.ID, "cphContenido_txtNombre")))
         self.wait.until(EC.element_to_be_clickable((By.ID, "cphContenido_txtNombre"))).send_keys(
