@@ -9,7 +9,7 @@ Automated scraper that collects **sanctioned suppliers ("proveedores sancionados
 This project automates the extraction of public sanction data published by INEGI (Mexico’s National Institute of Statistics and Geography).  
 The spider navigates dynamically rendered content using Selenium, extracts supplier names and sanction numbers, and outputs them as clean, structured JSON.
 
-Every 4 hours, the scraper runs automatically on **GitHub Actions**, regenerates the JSON file, and commits it back to the repository if any updates are detected.
+Every hour, the scraper runs automatically on **GitHub Actions**, regenerates the JSON file, and commits it back to the repository if any updates are detected.
 
 ---
 
