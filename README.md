@@ -1,6 +1,6 @@
 # INEGI Sanctions Scraper (Selenium + Scrapy)
 
-Automated scraper that collects **sanctioned suppliers ("proveedores sancionados")** from the official [INEGI website](https://www3.inegi.org.mx/sistemas/ci/relps/) using **Selenium** and **Scrapy**, and updates a structured JSON file (`sanctions.json`) every 4 hours via **GitHub Actions**.
+Automated scraper that collects **sanctioned suppliers ("proveedores sancionados")** from the official [INEGI website](https://www3.inegi.org.mx/sistemas/ci/relps/) using **Selenium** and **Scrapy**, and updates a structured JSON file (`sanctions.json`) every hour via **GitHub Actions**.
 
 ---
 
@@ -56,33 +56,33 @@ inegi/<br />
    ]
 
 
-GitHub Actions runs every hour, regenerates the file, and commits it automatically if changes occur.
+5.GitHub Actions runs every hour, regenerates the file, and commits it automatically if changes occur.<br />
 
-## Requirements
+## Requirements<br />
 
-Python ≥ 3.10
-Google Chrome + ChromeDriver (for local runs)
+Python ≥ 3.10<br />
+Google Chrome + ChromeDriver (for local runs)<br />
 
-Dependencies:
-pip install scrapy selenium pyyaml
+Dependencies:<br />
+pip install scrapy selenium pyyaml<br />
 
-# Run the spider manually
-python main.py
+# Run the spider manually<br />
+python main.py<br />
 
-## GitHub Actions Automation
+## GitHub Actions Automation<br />
 
-The workflow file .github/workflows/run_scraper.yml runs hourly:
+The workflow file .github/workflows/run_scraper.yml runs hourly:<br />
 
-on:
-  schedule:
-    - cron: "0 * * * *"
-  workflow_dispatch:
+on:<br />
+  schedule:<br />
+    - cron: "0 * * * *"<br />
+  workflow_dispatch:<br />
 
 
-# Each run:
+# Each run:<br />
 
-Sets up Python
-Installs dependencies
-Runs the scraper in headless mode
-Updates sanctions.json
-Commits and pushes updates back to the main branch
+Sets up Python<br />
+Installs dependencies<br />
+Runs the scraper in headless mode<br />
+Updates sanctions.json<br />
+Commits and pushes updates back to the main branch<br />
