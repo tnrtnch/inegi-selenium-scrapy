@@ -58,7 +58,7 @@ inegi/<br />
    ]
 
 
-5.GitHub Actions runs every hour, regenerates the file, and commits it automatically if changes occur.<br />
+5.GitHub Actions runs every hour, regenerates the file, and commits it automatically.<br />
 
 ## Requirements<br />
 
