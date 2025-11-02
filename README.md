@@ -30,11 +30,12 @@ inegi/<br />
 │ └── settings.py # Scrapy configuration<br />
 │<br />
 ├──.gitignore<br />
+├──README.md<br />
 ├──main.py # Script to run the spider locally<br />
 ├──requirements.txt<br />
 ├──sanctions.json # Automatically updated data output<br />
 ├──scraper.yaml # Target URL and search parameters<br />
-└── scrapy.cfg # Scrapy project configuration<br />
+└──scrapy.cfg # Scrapy project configuration<br />
 
 
 ## How It Works<br />
