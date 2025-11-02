@@ -36,11 +36,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # En güncel dosyayı ekle
           git add sanctions.json
-
-          # Eğer değişiklik varsa commit et, yoksa sadece push yap
           git diff --cached --quiet || git commit -m "Auto update sanctions.json [$(date -u +'%Y-%m-%d %H:%M UTC')]"
           
           git push origin main
