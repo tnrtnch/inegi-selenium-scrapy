@@ -15,28 +15,28 @@ Every 4 hours, the scraper runs automatically on **GitHub Actions**, regenerates
 
 ## Project Structure
 
-inegi/
-└── .github/
-│    └── workflows/
-│       └── run_scraper.yml # GitHub Actions automation
-├── inegi/
-│ ├── spiders/
-│ │ └── inegi_spider.py # Main Scrapy spider (with Selenium logic)
-│ │ 
-│ ├── items.py # Defines scraped item structure
-│ ├── middlewares.py
-│ ├── pipelines.py # Saves and formats JSON output
-│ └── settings.py # Scrapy configuration
-│
-├──.gitignore
-├──main.py # Script to run the spider locally
-├──requirements.txt
-├──sanctions.json # Automatically updated data output
-├──scraper.yaml # Target URL and search parameters
-└── scrapy.cfg # Scrapy project configuration
+inegi/<br />
+└── .github/<br />
+│    └── workflows/<br />
+│       └── run_scraper.yml # GitHub Actions automation<br />
+├── inegi/<br />
+│ ├── spiders/<br />
+│ │ └── inegi_spider.py # Main Scrapy spider (with Selenium logic)<br />
+│ │ <br />
+│ ├── items.py # Defines scraped item structure<br />
+│ ├── middlewares.py<br />
+│ ├── pipelines.py # Saves and formats JSON output<br />
+│ └── settings.py # Scrapy configuration<br />
+│<br />
+├──.gitignore<br />
+├──main.py # Script to run the spider locally<br />
+├──requirements.txt<br />
+├──sanctions.json # Automatically updated data output<br />
+├──scraper.yaml # Target URL and search parameters<br />
+└── scrapy.cfg # Scrapy project configuration<br />
 
 
-## How It Works
+## How It Works<br />
 
 1. **Selenium** launches a headless Chrome browser and loads the INEGI sanctions page.  
 2. The spider searches for the configured term (from `scraper.yaml`), e.g. `"Ver total de proveedores sancionados"`.
