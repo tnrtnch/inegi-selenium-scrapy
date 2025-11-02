@@ -10,7 +10,7 @@ class InegiPipeline:
         spider.logger.info("Pipeline started")
 
     def process_item(self, item, spider):
-        self.data.append(dict(item))
+        self.data.append(dict(item)) 
         return item
 
     def close_spider(self, spider):
