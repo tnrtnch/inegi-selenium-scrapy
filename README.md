@@ -18,7 +18,7 @@ Every hour, the scraper runs automatically on **GitHub Actions**, regenerates th
 inegi/<br />
 └── .github/<br />
 │    └── workflows/<br />
-│    &nbsp;└── run_scraper.yml # GitHub Actions automation<br />
+│    &nbsp; &nbsp; └── run_scraper.yml # GitHub Actions automation<br />
 │<br />
 ├── inegi/<br />
 │ ├── spiders/<br />
