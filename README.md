@@ -58,8 +58,9 @@ inegi/<br />
      }
    ]
 
+5.The generated sanctions.json file is automatically cleaned — all duplicate Entity_name entries are merged, and their Sanction_numbers are deduplicated before saving.<br />
 
-5.GitHub Actions runs every hour, regenerates the file, and commits it automatically.<br />
+6.GitHub Actions runs every hour, regenerates the file, and commits it automatically.<br />
 
 ## Requirements<br />
 
