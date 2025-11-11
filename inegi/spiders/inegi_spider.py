@@ -80,4 +80,4 @@ class InegiSpider(scrapy.Spider):
     def closed(self, reason):
         if hasattr(self, "driver") and self.driver:
             self.driver.quit()
-            self.logger.info("WebDriver closed.")
+            self.logger.info("WebDriver closed.") 
