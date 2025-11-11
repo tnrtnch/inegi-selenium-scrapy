@@ -19,8 +19,6 @@ class InegiSpider(scrapy.Spider):
 
         self.output_file = self.config.get("output_file", "sanctions.json")
 
-        # self.driver = webdriver.Chrome()
-        # self.wait = WebDriverWait(self.driver, 15)
 
         from selenium.webdriver.chrome.options import Options
         options = Options()
@@ -45,7 +43,7 @@ class InegiSpider(scrapy.Spider):
         self.wait.until(EC.element_to_be_clickable((By.ID, "cphContenido_txtNombre"))).send_keys(
             self.config["search_query"]
         )
-        self.wait.until(EC.element_to_be_clickable((By.ID, "cphContenido_btnBuscarDatos"))).click()
+        self.wait.until(EC.element_to_be_clickable((By.ID, "cphContenido_lnkbtnTotal"))).click()
         self.wait.until(EC.presence_of_all_elements_located((By.XPATH, "(//tbody)[5]//a")))
 
         yield from self.parse_page()
@@ -82,4 +80,4 @@ class InegiSpider(scrapy.Spider):
     def closed(self, reason):
         if hasattr(self, "driver") and self.driver:
             self.driver.quit()
-            self.logger.info("🧹 WebDriver closed.")
+            self.logger.info("WebDriver closed.")
