@@ -89,3 +89,10 @@ Installs dependencies<br />
 Runs the scraper in headless mode<br />
 Updates sanctions.json<br />
 Commits and pushes updates back to the main branch<br />
+
+## Failure Alert (Email Notification)<br />
+
+This project includes an automated email alert system. If the scraper fails during execution (e.g. site structure changes, Selenium errors, or runtime exceptions),
+a notification email is automatically sent via GitHub Actions to inform maintainers immediately.
+
+This ensures rapid awareness of parsing issues and improves operational reliability.
