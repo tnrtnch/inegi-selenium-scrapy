@@ -74,11 +74,11 @@ python main.py<br />
 
 ## GitHub Actions Automation<br />
 
-The workflow file .github/workflows/run_scraper.yml runs hourly:<br />
+The workflow file .github/workflows/run_scraper.yml runs daily:<br />
 
 on:<br />
   schedule:<br />
-    - cron: "0 * * * *"<br />
+    - cron: "0 0 * * *"<br />
   workflow_dispatch:<br />
 
 
