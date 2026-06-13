@@ -33,7 +33,7 @@ class InegiSpider(scrapy.Spider):
         self.driver = webdriver.Chrome(options=options)
         self.wait = WebDriverWait(self.driver, 15)
 
-    asyn def start(self):
+    async def start(self):
         yield scrapy.Request(
             url=self.config["target_url"], 
             callback=self.parse_with_selenium,
