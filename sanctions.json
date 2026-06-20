@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-19 03:57:44 UTC",
+  "last_updated": "2026-06-20 02:58:50 UTC",
   "data": [
     {
       "Entity_name": "ASHANTY FERNANDEZ MARTINEZ",
@@ -350,6 +350,12 @@
       "Entity_name": "SERVICIOS ADMINISTRATIVOS Y EMPRESARIALES DEL SUR DE TAMAULIPAS, S.A. DE C.V.",
       "Sanction_numbers": [
         "IINEGI.OIC5.03/5/2023"
+      ]
+    },
+    {
+      "Entity_name": "SERVICIOS INDUSTRIALES Y EMPRESARIALES DE LA LAGUNA, S.A. DE C.V.",
+      "Sanction_numbers": [
+        "INEGI.OIC5.03/6/2025"
       ]
     },
     {
