@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-27 07:04:01 UTC",
+  "last_updated": "2026-09-12 13:18:24 UTC",
   "data": [
     {
       "Entity_name": "ASHANTY FERNANDEZ MARTINEZ",
@@ -338,6 +338,12 @@
       "Entity_name": "PROPIMEX, S. DE R.L. DE C.V.",
       "Sanction_numbers": [
         "INEGI.OIC5.03/3/2026"
+      ]
+    },
+    {
+      "Entity_name": "PROTEL DEL CENTRO, S.A. DE C.V.",
+      "Sanction_numbers": [
+        "INEGI.OIC5.03/1/2026"
       ]
     },
     {
