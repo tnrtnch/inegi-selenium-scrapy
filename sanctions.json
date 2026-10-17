@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-16 02:58:29 UTC",
+  "last_updated": "2026-10-17 02:50:06 UTC",
   "data": [
     {
       "Entity_name": "ASHANTY FERNANDEZ MARTINEZ",
@@ -103,6 +103,12 @@
       "Entity_name": "AUTOMABER, S.A. DE C.V.",
       "Sanction_numbers": [
         "INEGI.OIC5.03/11/2023"
+      ]
+    },
+    {
+      "Entity_name": "AVETRONIC, S.A. DE C.V.",
+      "Sanction_numbers": [
+        "INEGI.OIC5.03/6/2026"
       ]
     },
     {
